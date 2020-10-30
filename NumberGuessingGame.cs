@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace NumberGuessingGame
 {
@@ -14,9 +14,9 @@ namespace NumberGuessingGame
             /* Do-while loop that we only break out of once we guess the right number. When the program is ran, 
              * it awaits the player input, parses it to an int, compares that int to winNum via a switch statement, 
              * with the input as the conditional. Each failed attempt at guessing the correct value displays a message 
-             * that hint at how to guess next, and increments the counter by 1. When the player successfully guesses 
-             * the correct value, we display the victory message, display the counter and exit the do-while loop, thus
-             * terminating the program.
+             * that hint at how to guess next, and increments the counter by 1, and we repeat the do-while loop. When 
+             * the player successfully guesses the correct value, we display the victory message, display the counter 
+             * and exit the do-while loop, thus terminating the program.
              */
             do
             {
@@ -27,21 +27,21 @@ namespace NumberGuessingGame
                 
                 switch(i)
                 {
-                    case int n when (n < winNum && n >= 0):                         
+                    case int n when (n < winNum && n >= 0):             //Input is too low                
                         Console.WriteLine($"{n} is too low! Guess higher...");      
                         count++;                                                    
-                        break;                                                      
-                    case int n when (n > winNum && n <= 100):                       
+                        break;
+                    case int n when (n > winNum && n <= 100):           //Input is too high
                         Console.WriteLine($"{n} is too high! Guess lower...");      
                         count++;                                                    
                         break;                                                      
-                    case int n when (n == winNum):                                  
+                    case int n when (n == winNum):                      //Input is correct!
                         Console.WriteLine($"{n} is the correct value! " +
                             $"\nYou were able to guess the correct number in {count} attempts. " +
                             $"\nThank you for playing!");                           
                         win = true;                                                 
                         break;                                                      
-                    default: 
+                    default:                                            //Input is either less than 0 or more than 100
                         Console.WriteLine("Invalid value!");
                         count++; 
                         break; 
