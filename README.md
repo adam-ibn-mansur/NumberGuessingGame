@@ -1,7 +1,7 @@
 # NumberGuessingGame
 A fun little game involving guessing between 0 and 100. Comes with a counter that tallies how many attempts it took the player to guess the correct number.
 
-[How it works]
+How it works:
 The program creates a variable and initializes it to a natural number value between 0 and 100. A boolean that determines whether or not we won yet is created. The attempt counter is initialized to 1, should the player guess the right number on the first try.
 
 The algorithm that does all of the work for us is a switch statement nested within a do-while loop.
